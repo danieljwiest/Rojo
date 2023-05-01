@@ -1,0 +1,40 @@
+@import "../../../../styles.css";
+
+.tileBox {
+  display: flex;
+  position: relative;
+  height: calc((19 / 239) * var(--playerBoardWidth));
+  aspect-ratio: 1 / 1;
+  /* background-color: gray; */
+  border-radius: calc((1 / 239) * var(--playerBoardWidth));
+  margin-top: calc((1.25 / 239) * var(--playerBoardWidth));
+  margin-inline: calc((1.25 / 239) * var(--playerBoardWidth));
+}
+
+.tileBox.boxShadow {
+  box-shadow: calc((0.5 / 239) * var(--playerBoardWidth))
+    calc((0.5 / 239) * var(--playerBoardWidth))
+    calc((0.75 / 239) * var(--playerBoardWidth)) var(--highlight_primary);
+}
+
+.tileBox.color-p1 {
+  background-color: var(--color-p1);
+}
+.tileBox.color1 {
+  background-color: var(--color1);
+}
+.tileBox.color2 {
+  background-color: var(--color2);
+}
+.tileBox.color3 {
+  background-color: var(--color3);
+}
+.tileBox.color4 {
+  background-color: var(--color4);
+}
+.tileBox.color5 {
+  background-color: var(--color5);
+}
+.tileBox.color-PlayerBoard {
+  background-color: var(--background_pboard1);
+}

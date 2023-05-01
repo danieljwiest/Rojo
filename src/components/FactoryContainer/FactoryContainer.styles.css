@@ -1,0 +1,11 @@
+@import "../../styles.css";
+
+.factoryContainer {
+  position: relative;
+  width: calc(1.75 * var(--playerBoardWidth));
+  /* container size based on spacing required for maximum of 9 factoryDisplays */
+  aspect-ratio: 1 / 1;
+  /* background-color: rgb(71, 67, 67); */
+  grid-area: tileMarket;
+  --numOfDisplays: 1; /* placeholder for variable set in FactoryContainer Component */
+}

@@ -1,0 +1,51 @@
+@import "../../../../styles.css";
+
+.floorLineContainer {
+  height: calc((45 / 239) * var(--playerBoardWidth));
+  display: flex;
+  background-color: var(--background_pboard2);
+  border-radius: calc((1 / 239) * var(--playerBoardWidth));
+  padding-top: calc((3 / 239) * var(--playerBoardWidth));
+  padding-bottom: calc((3 / 239) * var(--playerBoardWidth));
+  padding-left: calc((3 / 239) * var(--playerBoardWidth));
+  padding-right: calc((3 / 239) * var(--playerBoardWidth));
+  margin-left: calc((3 / 239) * var(--playerBoardWidth));
+  margin-right: calc((3 / 239) * var(--playerBoardWidth));
+  filter: drop-shadow(
+    0px 0px calc((4 / 239) * var(--playerBoardWidth)) var(--highlight_primary)
+  );
+}
+
+.floorLine {
+  height: 100%;
+  display: flex;
+  /* border: 1px solid black; */
+}
+
+.boxed1 {
+  /* border: 1px solid black; */
+  box-shadow: 0px 0px calc((4 / 239) * var(--playerBoardWidth))
+      calc((1.5 / 239) * var(--playerBoardWidth)) var(--highlight_primary),
+    0px 0px calc((4 / 239) * var(--playerBoardWidth))
+      calc((1 / 239) * var(--playerBoardWidth)) var(--secondary_highlight);
+}
+
+.floorLine.hover {
+  box-shadow: 0px 0px calc((4 / 239) * var(--playerBoardWidth))
+      calc((1.5 / 239) * var(--playerBoardWidth)) var(--highlight_primary),
+    0px 0px calc((12 / 239) * var(--playerBoardWidth))
+      calc((1 / 239) * var(--playerBoardWidth)) var(--secondary_highlight);
+}
+
+.brokenTileContainer {
+  /* NEED TO FILL IN  */
+}
+
+.brokenTilePtValue {
+  /* NEED TO FILL IN */
+  font-size: calc((9 / 239) * var(--playerBoardWidth));
+  text-align: center;
+  font-weight: 600;
+  color: var(--background_pboard1);
+  flex-grow: 1;
+}

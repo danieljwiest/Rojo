@@ -1,0 +1,85 @@
+@import "../../../../styles.css";
+
+/* ------TO DO ---- 
+Add a third layer of shadows. SO dark sharp shadow first, then medium all around blurred shadow. Then offset blurred shadow. */
+
+.scoreTrackContainer {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* background-color: var(--background_pboard2); */
+  /* height: calc((78 / 239) * var(--playerBoardWidth)); */
+  /* margin-left: calc((8 / 239) * var(--playerBoardWidth)); */
+  /* margin-right: calc((8 / 239) * var(--playerBoardWidth)); */
+  /* margin-top: calc((2 / 239) * var(--playerBoardWidth)); */
+  filter: drop-shadow(
+    0px 0px calc((4 / 239) * var(--playerBoardWidth)) var(--highlight_primary)
+  );
+}
+
+.scoreTrackRow {
+  display: flex;
+  justify-content: space-evenly;
+  /* background-color: lightblue; */
+  height: calc((11 / 239) * var(--playerBoardWidth));
+  margin: calc((1 / 239) * var(--playerBoardWidth));
+}
+
+.scoreTrackFirstRow {
+  display: flex;
+  background-color: var(--background_pboard2);
+  height: calc((12 / 239) * var(--playerBoardWidth));
+  width: calc((13.5 / 239) * var(--playerBoardWidth));
+  border-top-right-radius: calc((1 / 239) * var(--playerBoardWidth));
+  border-top-left-radius: calc((1 / 239) * var(--playerBoardWidth));
+  padding-top: calc((0.5 / 239) * var(--playerBoardWidth));
+  margin-left: calc((6 / 239) * var(--playerBoardWidth));
+  padding-bottom: calc((0.5 / 239) * var(--playerBoardWidth));
+  padding-left: calc((1 / 239) * var(--playerBoardWidth));
+  padding-right: calc((1 / 239) * var(--playerBoardWidth));
+  /* background-color: aquamarine; */
+}
+
+.mainScoreTrack {
+  height: calc((67 / 239) * var(--playerBoardWidth));
+  display: flex;
+  flex-direction: column;
+  border-radius: calc((1 / 239) * var(--playerBoardWidth));
+  background-color: var(--background_pboard2);
+  padding-left: calc((3 / 239) * var(--playerBoardWidth));
+  padding-right: calc((3 / 239) * var(--playerBoardWidth));
+  margin-left: calc((3 / 239) * var(--playerBoardWidth));
+  margin-right: calc((3 / 239) * var(--playerBoardWidth));
+  /* box-shadow: 0px 0px calc((1.5 / 239) * var(--playerBoardWidth)) */
+  /* calc((1.5 / 239) * var(--playerBoardWidth)) var(--highlight_primary); */
+}
+
+.scoreMarkerBox {
+  display: flex;
+  position: relative;
+  width: calc((10 / 239) * var(--playerBoardWidth));
+  aspect-ratio: 1 / 1;
+  margin: calc((0.5 / 239) * var(--playerBoardWidth));
+  /* background-color: grey; */
+  /* text-align: center; */
+  font-size: calc((7 / 239) * var(--playerBoardWidth));
+  font-weight: 600;
+  align-items: center;
+  justify-items: center;
+  color: var(--background_pboard2);
+  background-color: var(--background_pboard1);
+  box-shadow: 0px 0px calc((0.25 / 239) * var(--playerBoardWidth))
+      calc((0.1 / 239) * var(--playerBoardWidth)) var(--highlight_primary),
+    calc((1 / 239) * var(--playerBoardWidth))
+      calc((1 / 239) * var(--playerBoardWidth))
+      calc((1 / 239) * var(--playerBoardWidth))
+      calc((1 / 239) * var(--playerBoardWidth)) var(--highlight_primary);
+}
+
+.zeroPtMarker {
+  box-shadow: 0px 0px calc((0.25 / 239) * var(--playerBoardWidth))
+      calc((0.1 / 239) * var(--playerBoardWidth)) var(--highlight_primary),
+    calc((0.5 / 239) * var(--playerBoardWidth))
+      calc((0.5 / 239) * var(--playerBoardWidth))
+      calc((0.5 / 239) * var(--playerBoardWidth))
+      calc((0.5 / 239) * var(--playerBoardWidth)) var(--highlight_primary);
+}

@@ -1,0 +1,29 @@
+@import "../../../../styles.css";
+
+.patternLinesContainer {
+  display: flex;
+  flex-direction: column;
+  height: calc((108 / 239) * var(--playerBoardWidth));
+  aspect-ratio: 1 / 1;
+  margin: calc((3 / 239) * var(--playerBoardWidth));
+  align-items: flex-end;
+}
+
+.patternLine {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 20%;
+  /* margin-bottom: 15px; */
+  /* margin-top: 15px; */
+}
+
+.boxed {
+  /* border: 1px solid var(--secondary_highlight); */
+  box-shadow: 0px 0px calc((4 / 239) * var(--playerBoardWidth))
+    var(--secondary_highlight);
+}
+
+.patternLine.hover {
+  box-shadow: 0px 0px calc((8 / 239) * var(--playerBoardWidth))
+    var(--secondary_highlight);
+}

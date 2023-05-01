@@ -1,0 +1,19 @@
+@import "../../../../styles.css";
+
+.wall {
+  display: flex;
+  flex-direction: column;
+  height: calc((108 / 239) * var(--playerBoardWidth));
+  aspect-ratio: 1 / 1;
+  border-radius: calc((1 / 239) * var(--playerBoardWidth));
+  /* background-color: darkcyan; */
+  margin: calc((3 / 239) * var(--playerBoardWidth));
+  /* box-shadow: 0px 0px calc((1.5 / 239) * var(--playerBoardWidth))
+    calc((1.5 / 239) * var(--playerBoardWidth)) var(--highlight_primary); */
+}
+
+.wallLine {
+  display: flex;
+  height: 20%;
+  padding-left: calc((0.33 / 239) * var(--playerBoardWidth));
+}

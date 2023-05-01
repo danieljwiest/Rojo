@@ -1,0 +1,32 @@
+@import "../../../../styles.css";
+
+.centerDisplay {
+  position: absolute;
+  top: 49.5%; /* 49.5% based on manual adjustment for visual*/
+  left: 50%;
+}
+
+.centerTile {
+  position: absolute;
+  top: 50%;
+  /* 3% added to shift tiles to center of FactoryDisplay. Similar for next line */
+  left: 50%;
+
+  margin: calc(
+    -1 * ((19 / 2) / 239) * var(--playerBoardWidth)
+  ); /*margin set to half of the tile size */
+
+  /* placeholder for variables set in CenterDisplay Component*/
+  --tileNum: 0;
+  --ringNum: 0;
+  --tilesPerRing: 1;
+
+  /* Calculated values for tranformation */
+  --radius: calc(
+    (50 / 239) * var(--playerBoardWidth) * var(--ringNum) * 0.8
+  ); /* 0.8 factor added to manually adjust radius */
+  --rotationAngle: calc(-90deg + 360deg * var(--tileNum) / var(--tilesPerRing));
+
+  transform: rotate(var(--rotationAngle)) translate(var(--radius))
+    rotate(calc(-1 * var(--rotationAngle)));
+}

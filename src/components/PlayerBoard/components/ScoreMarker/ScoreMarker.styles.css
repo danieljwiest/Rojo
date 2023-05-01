@@ -1,0 +1,27 @@
+@import "../../../../styles.css";
+
+.scoreMarker {
+  transform-style: preserve-3d;
+  background-color: var(--color_scoreMarker);
+  height: calc((8 / 239) * var(--playerBoardWidth));
+  aspect-ratio: 1 / 1;
+  border-radius: 2%;
+  /* box-shadow: -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+      28px 28px 28px 0 rgba(34, 33, 81, 0.25); */
+  transform: translate3d(
+    calc(-1 * (1 / 239) * var(--playerBoardWidth)),
+    calc(-1 * (1.5 / 239) * var(--playerBoardWidth)),
+    calc(1 * (0.5 / 239) * var(--playerBoardWidth))
+  );
+}
+.scoreMarkerBase {
+  position: absolute;
+  top: 12%;
+  left: 15%;
+  transform-style: preserve-3d;
+  background-color: var(--color_scoreMarkerBase);
+  height: calc((8 / 239) * var(--playerBoardWidth));
+  aspect-ratio: 1 / 1;
+  border-radius: 2%;
+  transform: rotateX(30deg) rotateZ(0deg);
+}

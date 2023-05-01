@@ -1,0 +1,59 @@
+@import "../../styles.css";
+
+.gameBoard {
+  display: grid;
+  width: calc(4 * var(--playerBoardWidth));
+  background-color: var(--background_main);
+  justify-items: center;
+  align-items: center;
+  grid-template-columns:
+    var(--playerBoardWidth) calc(2 * var(--playerBoardWidth))
+    var(--playerBoardWidth);
+  grid-template-areas:
+    "    .      pBoard-1     .    "
+    " pBoard-4 tileMarket pBoard-2"
+    "    .      pBoard-3     .    ";
+  padding-top: calc((6 / 239) * var(--playerBoardWidth));
+}
+
+.twoPlayerGame {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "pBoard-1"
+    "tileMarket"
+    "pBoard-2";
+}
+
+@media only screen and (max-width: 480px) {
+  .gameBoard {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "tileMarket"
+      "pBoard-1"
+      "pBoard-2"
+      "pBoard-3"
+      "pBoard-4";
+  }
+}
+/* If using the following game boards then you need to update the associated className in GameBoard.tsx  */
+/* .gameBoard-2 {
+    display: grid;
+    background-color: red;
+  }
+  
+  .gameBoard-3 {
+    display: grid;
+    background-color: blue;
+  }
+  
+  .gameBoard-4 {
+    display: grid;
+    width: 100vw;
+    background-color: green;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas:
+      "    .      pBoard-1     .    "
+      " pBoard-4 tileMarket pBoard-2"
+      "    .      pBoard-3     .    ";
+  } */

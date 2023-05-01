@@ -1,0 +1,383 @@
+@import "../node_modules/bulma/css/bulma.min.css";
+
+:root {
+  --playerBoardWidth: 50vw;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(27, 26, 26);
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.playerBoard {
+  display: flex;
+  width: var(--playerBoardWidth);
+  aspect-ratio: 1 / 1;
+  flex-direction: column;
+  background-color: black;
+  /* Grid Area is assigned within the PlayerBoard Component */
+}
+.playerBoard.active {
+  box-shadow: 0px 0px calc((10 / 239) * var(--playerBoardWidth))
+    calc((4 / 239) * var(--playerBoardWidth)) grey;
+}
+
+.scoreTrackContainer {
+  display: flex;
+  flex-direction: column;
+  height: calc((78 / 239) * var(--playerBoardWidth));
+  margin-left: calc((8 / 239) * var(--playerBoardWidth));
+  margin-right: calc((8 / 239) * var(--playerBoardWidth));
+  margin-top: calc((2 / 239) * var(--playerBoardWidth));
+  filter: drop-shadow(0px 0px calc((2 / 239) * var(--playerBoardWidth)) gray);
+}
+
+.mainScoreTrack {
+  height: calc((67 / 239) * var(--playerBoardWidth));
+  display: flex;
+  flex-direction: column;
+  border-radius: calc((1 / 239) * var(--playerBoardWidth));
+  background-color: aquamarine;
+  padding-left: calc((3 / 239) * var(--playerBoardWidth));
+  padding-right: calc((3 / 239) * var(--playerBoardWidth));
+}
+
+.scoreTrackRow {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: lightblue;
+  height: calc((11 / 239) * var(--playerBoardWidth));
+  margin: calc((1 / 239) * var(--playerBoardWidth));
+}
+
+.scoreTrackFirstRow {
+  display: flex;
+  height: calc((12 / 239) * var(--playerBoardWidth));
+  width: calc((13.5 / 239) * var(--playerBoardWidth));
+  border-top-right-radius: calc((1 / 239) * var(--playerBoardWidth));
+  border-top-left-radius: calc((1 / 239) * var(--playerBoardWidth));
+  padding-top: calc((0.5 / 239) * var(--playerBoardWidth));
+  margin-left: calc((3 / 239) * var(--playerBoardWidth));
+  padding-bottom: calc((0.5 / 239) * var(--playerBoardWidth));
+  padding-left: calc((1 / 239) * var(--playerBoardWidth));
+  padding-right: calc((1 / 239) * var(--playerBoardWidth));
+  background-color: aquamarine;
+}
+
+/* ------TO DO ---- 
+Add a third layer of shadows. SO dark sharp shadow first, then medium all around blurred shadow. Then offset blurred shadow. */
+
+.scoreMarkerBox {
+  display: flex;
+  position: relative;
+  width: calc((10 / 239) * var(--playerBoardWidth));
+  aspect-ratio: 1 / 1;
+  margin: calc((0.5 / 239) * var(--playerBoardWidth));
+  background-color: grey;
+  box-shadow: 0px 0px calc((0.25 / 239) * var(--playerBoardWidth))
+      calc((0.1 / 239) * var(--playerBoardWidth)) blue,
+    calc((1 / 239) * var(--playerBoardWidth))
+      calc((1 / 239) * var(--playerBoardWidth))
+      calc((1 / 239) * var(--playerBoardWidth))
+      calc((1 / 239) * var(--playerBoardWidth)) lightgrey;
+}
+
+.zeroPtMarker {
+  box-shadow: 0px 0px calc((0.25 / 239) * var(--playerBoardWidth))
+      calc((0.1 / 239) * var(--playerBoardWidth)) blue,
+    calc((0.5 / 239) * var(--playerBoardWidth))
+      calc((0.5 / 239) * var(--playerBoardWidth))
+      calc((0.5 / 239) * var(--playerBoardWidth))
+      calc((0.5 / 239) * var(--playerBoardWidth)) orange;
+}
+
+.scoreMarker {
+  transform-style: preserve-3d;
+  background-color: black;
+  height: calc((8 / 239) * var(--playerBoardWidth));
+  aspect-ratio: 1 / 1;
+  border-radius: 2%;
+  /* box-shadow: -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+    28px 28px 28px 0 rgba(34, 33, 81, 0.25); */
+  transform: translate3d(
+    calc(-1 * (1 / 239) * var(--playerBoardWidth)),
+    calc(-1 * (1.5 / 239) * var(--playerBoardWidth)),
+    calc(1 * (0.5 / 239) * var(--playerBoardWidth))
+  );
+}
+.scoreMarkerBase {
+  position: absolute;
+  top: 12%;
+  left: 15%;
+  transform-style: preserve-3d;
+  background-color: rgba(0, 0, 0, 0.402);
+  height: calc((8 / 239) * var(--playerBoardWidth));
+  aspect-ratio: 1 / 1;
+  border-radius: 2%;
+  transform: rotateX(30deg) rotateZ(0deg);
+}
+
+.tileSectionContainer {
+  height: calc((117 / 239) * var(--playerBoardWidth));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: darkgrey;
+  border-radius: calc((1 / 239) * var(--playerBoardWidth));
+  margin-top: calc((2 / 239) * var(--playerBoardWidth));
+  margin-left: calc((6 / 239) * var(--playerBoardWidth));
+  margin-right: calc((6 / 239) * var(--playerBoardWidth));
+  filter: drop-shadow(0px 0px calc((2 / 239) * var(--playerBoardWidth)) red);
+}
+
+.patternLinesContainer {
+  display: flex;
+  flex-direction: column;
+  height: calc((108 / 239) * var(--playerBoardWidth));
+  aspect-ratio: 1 / 1;
+  margin: calc((3 / 239) * var(--playerBoardWidth));
+  align-items: flex-end;
+}
+
+.patternLine {
+  display: flex;
+  flex-direction: row-reverse;
+  height: 20%;
+  margin-bottom: calc((1 / 239) * var(--playerBoardWidth));
+  margin-top: calc((1 / 239) * var(--playerBoardWidth));
+}
+
+.wall {
+  display: flex;
+  flex-direction: column;
+  height: calc((112 / 239) * var(--playerBoardWidth));
+  width: calc((110 / 239) * var(--playerBoardWidth));
+  /* aspect-ratio: 1 / 1; */
+  border-radius: calc((1 / 239) * var(--playerBoardWidth));
+  background-color: darkcyan;
+  margin: calc((1.5 / 239) * var(--playerBoardWidth));
+  padding-top: calc((1 / 239) * var(--playerBoardWidth));
+  padding-left: calc((1 / 239) * var(--playerBoardWidth));
+}
+
+.wallLine {
+  display: flex;
+  height: 20%;
+  padding-left: calc((0.33 / 239) * var(--playerBoardWidth));
+  margin-bottom: calc((1 / 239) * var(--playerBoardWidth));
+  margin-top: calc((1 / 239) * var(--playerBoardWidth));
+}
+
+.factoryContainer {
+  position: relative;
+  width: calc(2 * var(--playerBoardWidth));
+  /* container size based on spacing required for maximum of 9 factoryDisplays */
+  aspect-ratio: 1 / 1;
+  background-color: rgb(71, 67, 67);
+  grid-area: tileMarket;
+  --numOfDisplays: 1; /* placeholder for variable set in FactoryContainer Component */
+}
+
+.factoryDisplay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: calc(
+    -1 * ((75 / 2) / 239) * var(--playerBoardWidth)
+  ); /*margin set to half the div size */
+  height: calc((75 / 239) * var(--playerBoardWidth));
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background-color: teal;
+  --factoryDisplayNum: 1; /* placeholder for variable set in FactoryDisplay Component*/
+  --radius: calc((150 / 239) * var(--playerBoardWidth));
+  --rotationAngle: calc(
+    -90deg + 360deg * var(--factoryDisplayNum) / var(--numOfDisplays)
+  ); /* shifted -90deg for alignment. Always odd number of tiles -90deg shift will place first tile at top-center */
+  transform: rotate(var(--rotationAngle)) translate(var(--radius))
+    rotate(calc(-1 * var(--rotationAngle)));
+}
+
+.displayTile {
+  --tileNum: 0;
+  --radius: calc(
+    (0.3 * 75 / 239) * var(--playerBoardWidth)
+  ); /* height based on 30% of Factory Display Height */
+  --rotationAngle: calc(360deg * var(--tileNum) * 0.25);
+
+  position: absolute;
+  top: 53%; /* 3% added to shift tiles to center of FactoryDisplay. Similar for next line */
+  left: 52%;
+  margin: calc(
+    -1 * ((19 / 2) / 239) * var(--playerBoardWidth)
+  ); /*margin set to half of the tile size */
+
+  transform: rotate(var(--rotationAngle)) translate(var(--radius))
+    rotate(calc(-1 * var(--rotationAngle)));
+}
+
+.tileBox {
+  display: flex;
+  position: relative;
+  height: calc((19 / 239) * var(--playerBoardWidth));
+  aspect-ratio: 1 / 1;
+  background-color: gray;
+  border-radius: calc((1 / 239) * var(--playerBoardWidth));
+  margin-top: calc((0.625 / 239) * var(--playerBoardWidth));
+  margin-bottom: calc((0.625 / 239) * var(--playerBoardWidth));
+  margin-inline: calc((1.25 / 239) * var(--playerBoardWidth));
+  box-shadow: 0px 0px calc((1 / 239) * var(--playerBoardWidth)) blue;
+}
+
+.tile {
+  transform-style: preserve-3d;
+  background-color: pink;
+  height: calc((18 / 239) * var(--playerBoardWidth));
+  aspect-ratio: 1 / 1;
+  border-radius: 20%;
+  /* box-shadow: -1px 0 28px 0 rgba(34, 33, 81, 0.01),
+    28px 28px 28px 0 rgba(34, 33, 81, 0.25); */
+  transform: translate3d(
+    calc(-1 * (2 / 239) * var(--playerBoardWidth)),
+    calc(-1 * (3 / 239) * var(--playerBoardWidth)),
+    calc(0.1 * (4 / 239) * var(--playerBoardWidth))
+  );
+}
+.tileBase {
+  position: absolute;
+  top: 6%;
+  left: 5%;
+  /* margin: -5 * var(--edge-len);
+  padding: 5 * var(--edge-len); */
+  transform-style: preserve-3d;
+  background-color: #aa0193aa;
+  /* width: 240px;
+  height: 320px; */
+  height: calc((18 / 239) * var(--playerBoardWidth));
+  aspect-ratio: 1 / 1;
+  border-radius: 15%;
+  transform: rotateX(30deg) rotateZ(0deg);
+}
+
+.tileBase.red {
+  background-color: rgba(213, 0, 0, 0.422);
+}
+.tile.red,
+.tileBox.red {
+  background-color: rgba(213, 0, 0, 0.946);
+}
+.tileBase.blue {
+  background-color: rgba(0, 0, 213, 0.422);
+}
+.tile.blue,
+.tileBox.blue {
+  background-color: rgba(0, 0, 213, 0.946);
+}
+.tileBase.black {
+  background-color: rgba(0, 0, 0, 0.422);
+}
+.tile.black,
+.tileBox.black {
+  background-color: rgba(0, 0, 0, 0.946);
+}
+.tileBase.yellow {
+  background-color: rgba(136, 134, 38, 0.422);
+}
+.tile.yellow,
+.tileBox.yellow {
+  background-color: rgba(136, 134, 38, 0.946);
+}
+.tileBase.white {
+  background-color: rgb(103, 103, 103);
+}
+.tile.white,
+.tileBox.white {
+  background-color: white;
+}
+
+.tileBase.hover {
+  box-shadow: 0px 0px calc((8 / 239) * var(--playerBoardWidth)) yellow;
+}
+.boxed {
+  /* border: 1px solid black; */
+}
+.patternLine.hover {
+  box-shadow: 0px 0px calc((8 / 239) * var(--playerBoardWidth)) black;
+}
+
+.clicked {
+  background-color: black;
+}
+
+.floorLine {
+  height: 16.666%;
+  display: flex;
+  background-color: cadetblue;
+  /* margin-top: calc((2 / 239) * var(--playerBoardWidth)); */
+  /* margin-bottom: calc((10 / 239) * var(--playerBoardWidth)); */
+}
+
+/* GAME BOARD CSS BELOW HERE */
+
+.gameBoard {
+  display: grid;
+  width: calc(4 * var(--playerBoardWidth));
+  background-color: rgb(33, 32, 32);
+  justify-items: center;
+  align-items: center;
+  grid-template-columns:
+    var(--playerBoardWidth) calc(2 * var(--playerBoardWidth))
+    var(--playerBoardWidth);
+  grid-template-areas:
+    "    .      pBoard-1     .    "
+    " pBoard-4 tileMarket pBoard-2"
+    "    .      pBoard-3     .    ";
+}
+
+.twoPlayerGame {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "pBoard-1"
+    "tileMarket"
+    "pBoard-2";
+}
+
+@media only screen and (max-width: 480px) {
+  .gameBoard {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "tileMarket"
+      "pBoard-1"
+      "pBoard-2"
+      "pBoard-3"
+      "pBoard-4";
+  }
+}
+/* If using the following game boards then you need to update the associated className in GameBoard.tsx  */
+/* .gameBoard-2 {
+  display: grid;
+  background-color: red;
+}
+
+.gameBoard-3 {
+  display: grid;
+  background-color: blue;
+}
+
+.gameBoard-4 {
+  display: grid;
+  width: 100vw;
+  background-color: green;
+  justify-items: center;
+  align-items: center;
+  grid-template-areas:
+    "    .      pBoard-1     .    "
+    " pBoard-4 tileMarket pBoard-2"
+    "    .      pBoard-3     .    ";
+} */
