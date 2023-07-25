@@ -1,11 +1,16 @@
 import { Dispatch, SetStateAction, useEffect, MutableRefObject } from "react";
-import { isMobile } from "react-device-detect";
+// import { isMobile } from "react-device-detect";
 import {
   GameState as IGameState,
   Action as IAction,
 } from "../../Types/AppTypes";
 import "./Tile.styles.css";
-import { TILE_COLORS } from "../../constants/constants";
+import {
+  NUM_OF_CENTER_TILES,
+  NUM_OF_FLOOR_TILES,
+  TILE_COLORS,
+} from "../../constants/constants";
+import { TILES_PER_FD } from "../../constants/constants";
 // import { RenderCount } from "../../utils/renderCount";
 
 const Tile = ({
@@ -25,6 +30,7 @@ const Tile = ({
   numOfSelectedTiles?: MutableRefObject<number>;
   displayCode?: string;
 }) => {
+  const isMobile = true;
   const tileHover = isHovered ? "hover" : "";
   // const scoredTile = onWall ? "scoredTile" : ""; ////DELETE??? Dont think its used
   const selectedTileState = gameState
@@ -66,6 +72,19 @@ const Tile = ({
               "onClick, selectedTileNum: ",
               numOfSelectedTiles.current
             );
+
+            //For mobile users calculate number of selected tiles.
+            if (isMobile) {
+              const tilesInDisplay =
+                displayCode === "CD" ? NUM_OF_CENTER_TILES - 1 : TILES_PER_FD;
+              let tileCount = 0;
+              for (let i = 1; i <= tilesInDisplay; i++) {
+                const tileId = `${displayCode}-T${i}`;
+                if (gameState?.tiles[tileId].color === tileColor) tileCount++;
+              }
+              numOfSelectedTiles.current = tileCount;
+              setHoveredTileColor(tileColor);
+            }
 
             //Guard against dispatch not being passed in. This shouldn't actually happen, but will catch problems if someone passes a displayCode to a tile componenent and does not include a dispatch.
             if (!dispatch) throw new Error("Dispatch was not passed to tile");
