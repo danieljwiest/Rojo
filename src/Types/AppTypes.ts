@@ -1,5 +1,5 @@
 export interface GameParams {
-  playSelection: string;
+  colorPalette: string;
   playerCount: string;
 }
 

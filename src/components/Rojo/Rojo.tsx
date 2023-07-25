@@ -5,7 +5,7 @@ const PLAYER_COUNTS = [2, 3, 4];
 const Rojo = () => {
   const [submitted, setSubmitted] = useState(false);
   const [gameParams, setGameParams] = useState({
-    playSelection: "",
+    colorPalette: "",
     playerCount: "",
   });
 
@@ -20,26 +20,14 @@ const Rojo = () => {
           e.preventDefault();
           const formData = new FormData(e.currentTarget);
           const obj = {
-            playSelection: formData.get("playSelection")?.toString() ?? "",
+            colorPalette: formData.get("colorPalette")?.toString() ?? "",
             playerCount: formData.get("playerCount")?.toString() ?? "",
           };
           setGameParams(obj);
           setSubmitted(true);
         }}
       >
-        <label htmlFor="playSelection">
-          Would You Like to Play Rojo?
-          <select id="playSelection" name="playSelection">
-            <option />
-            <option key="Yes" value="Yes">
-              Yes
-            </option>
-            <option key="No" value="No">
-              No
-            </option>
-          </select>
-        </label>
-        <label htmlFor="playSelection">
+        <label htmlFor="gameParams">
           Number of Players?
           <select id="playerCount" name="playerCount">
             <option />
@@ -48,6 +36,15 @@ const Rojo = () => {
                 {playerCount}
               </option>
             ))}
+          </select>
+        </label>
+        <label htmlFor="gameParams">
+          PlayerBoard Theme?
+          <select id="colorPalette" name="colorPallet">
+            <option />
+            <option key="synthwave" value="synthwave">
+              Synthwave
+            </option>
           </select>
         </label>
         <button>Submit</button>
