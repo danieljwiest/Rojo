@@ -5,7 +5,7 @@ import {
   Action as IAction,
 } from "../../../../Types/AppTypes";
 import "./FactoryDisplay.styles.css";
-import { RenderCount } from "../../../../utils/renderCount";
+// import { RenderCount } from "../../../../utils/renderCount";
 import Tile from "../../../Tile/Tile";
 
 const FactoryDisplay = ({

@@ -7,7 +7,7 @@ import FactoryContainer from "../FactoryContainer/FactoryContainer";
 import initGameState from "../../utils/initGameState";
 import TILEBAG from "../../utils/tileBag";
 import shuffle from "../../utils/shuffle";
-import { RenderCount } from "../../utils/renderCount";
+// import { RenderCount } from "../../utils/renderCount";
 import gameStateReducer from "../../Reducers/gameStateReducer";
 
 const initTileBag = shuffle(TILEBAG);

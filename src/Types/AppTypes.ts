@@ -1,5 +1,3 @@
-import { MutableRefObject } from "react";
-
 export interface GameParams {
   playSelection: string;
   playerCount: string;

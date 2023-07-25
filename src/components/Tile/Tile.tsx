@@ -5,11 +5,7 @@ import {
   Action as IAction,
 } from "../../Types/AppTypes";
 import "./Tile.styles.css";
-import {
-  NUM_OF_CENTER_TILES,
-  NUM_OF_FLOOR_TILES,
-  TILE_COLORS,
-} from "../../constants/constants";
+import { NUM_OF_CENTER_TILES, TILE_COLORS } from "../../constants/constants";
 import { TILES_PER_FD } from "../../constants/constants";
 // import { RenderCount } from "../../utils/renderCount";
 
