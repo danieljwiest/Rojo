@@ -25,6 +25,7 @@
 }
 .tileBox.color2 {
   background-color: var(--color2);
+  /* background-color: var(--color2_shade1); */
 }
 .tileBox.color3 {
   background-color: var(--color3);

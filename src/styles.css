@@ -4,16 +4,12 @@
   --playerBoardWidth: 50vw;
   /* COLOR PALLETE */
   /* https://www.color-hex.com/color-palette/57915 */
-  --color-p1: #26ff4e;
-  --color-p1: #ffffff;
+  /* --color-p1: #ffffff;
   --color1: #ff00c1;
-  --color2: #69ee74;
   --color2: #26ff4e;
   --color3: #00b8ff;
-  --color4: #4900ff;
   --color4: #9600ff;
-  --color5: #00fff9;
-  --color-p1_shade: #16992e;
+  --color5: #fffb96;
   --color-p1_shade: #999999;
 
   --color1_shade1: #ffb2ec;
@@ -21,12 +17,38 @@
   --color3_shade1: #b2e9ff;
   --color4_shade1: #c8b2ff;
   --color4_shade1: #dfb2ff;
-  --color5_shade1: #b2fffd;
-  /* --color1_shade2: #cc009a;
-  --color2_shade2: #7800cc;
-  --color3_shade2: #3a00cc;
-  --color4_shade2: #0093cc;
-  --color5_shade2: #00ccc7; */
+  --color5_shade1: #66643c; */
+
+  --color-p1: #ffffff;
+  --color1: #ff00c1;
+  --color2: #26ff4e;
+  --color3: #00b8ff;
+  --color3: #0fb7ee;
+  --color4: #9600ff;
+  --color4: #b54cff;
+
+  /* --color5: #00fff9;   OLD TEAL */
+  --color5: #ffd156;
+  --color5: #f1d239;
+
+  --color-p1_shade: #999999;
+
+  --color1_shade1: #7f0060;
+  /* --color1_shade1: #66004d; */
+  --color2_shade1: #137f27;
+  --color3_shade1: #005c7f;
+  /* --color4_shade1: #4b007f; DARK shade */
+  --color4_shade1: #eaccff;
+  --color4_shade1: #9600ff;
+
+  /* --color5_shade1: #b2fffd; OLD TEAL */
+  --color5_shade1: #7f682b;
+
+  /* --color1_shade2: #cc009a; */
+  --color2_shade2: #d3ffdb;
+  /* --color3_shade2: #3a00cc; */
+  /* --color4_shade2: #0093cc; */
+  /* --color5_shade2: #00ccc7; */
   /* --color1_shade3: #ff66d9;
   --color2_shade3: #c066ff;
   --color3_shade3: #9166ff;

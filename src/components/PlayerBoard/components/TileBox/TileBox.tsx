@@ -13,7 +13,9 @@ const TileBox = ({
   let boxShadow = "boxShadow";
 
   //remove background color and box shadow from tiles scored on a tileWall
-  if (tileActive && boxColor !== "") boxShadow = "";
+  // if (tileActive && boxColor !== "") boxShadow = ""; REMOVED FOR NOW. Allows boxshadow for default walltiles
+  if (boxColor !== "") boxShadow = "";
+
   if (tileActive) boxColor = "";
 
   return (
