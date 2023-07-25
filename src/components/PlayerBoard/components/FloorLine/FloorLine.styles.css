@@ -1,5 +1,3 @@
-@import "../../../../styles.css";
-
 .floorLineContainer {
   height: calc((45 / 239) * var(--playerBoardWidth));
   display: flex;

@@ -22,7 +22,9 @@ const App = () => {
       <BrowserRouter>
         <QueryClientProvider client={queryClient}>
           <header>
-            <Link to="/">Vermelho Game</Link>
+            <Link to="/" className="header">
+              Vermelho Game
+            </Link>
           </header>
           <Routes>
             <Route path="/" element={<Rojo />} />

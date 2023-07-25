@@ -1,5 +1,3 @@
-@import "../node_modules/bulma/css/bulma.min.css";
-
 :root {
   --playerBoardWidth: 50vw;
   /* COLOR PALLETE */
@@ -93,4 +91,27 @@
 
 * {
   box-sizing: border-box;
+}
+
+.header {
+  font-size: 3rem;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+}
+
+.hero {
+  background-image: url(/vermelho-long.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 15rem;
+  width: 100%;
 }

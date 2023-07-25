@@ -1,5 +1,3 @@
-@import "../../../../styles.css";
-
 .patternLinesContainer {
   display: flex;
   flex-direction: column;

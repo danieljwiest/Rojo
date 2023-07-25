@@ -1,5 +1,3 @@
-@import "../../styles.css";
-
 .gameBoard {
   display: grid;
   width: calc(4 * var(--playerBoardWidth));

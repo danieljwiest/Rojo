@@ -1,5 +1,3 @@
-@import "../../styles.css";
-
 .factoryContainer {
   position: relative;
   width: calc(1.75 * var(--playerBoardWidth));

@@ -6,6 +6,7 @@ const Rojo = () => {
 
   return (
     <div>
+      <div className="hero"></div>
       <form
         onSubmit={(e) => {
           e.preventDefault();
