@@ -1,17 +1,8 @@
-import { useState } from "react";
-import GameBoard from "../GameBoard/GameBoard";
+import { useNavigate } from "react-router-dom";
 const PLAYER_COUNTS = [2, 3, 4];
 
 const Rojo = () => {
-  const [submitted, setSubmitted] = useState(false);
-  const [gameParams, setGameParams] = useState({
-    colorPalette: "",
-    playerCount: "",
-  });
-
-  if (submitted) {
-    return <GameBoard gameParams={gameParams} />;
-  }
+  const navigate = useNavigate();
 
   return (
     <div>
@@ -19,12 +10,11 @@ const Rojo = () => {
         onSubmit={(e) => {
           e.preventDefault();
           const formData = new FormData(e.currentTarget);
-          const obj = {
-            colorPalette: formData.get("colorPalette")?.toString() ?? "",
-            playerCount: formData.get("playerCount")?.toString() ?? "",
-          };
-          setGameParams(obj);
-          setSubmitted(true);
+          const style = formData.get("style")?.toString() ?? "";
+          const playerCount = formData.get("playerCount")?.toString() ?? "";
+          console.log(formData);
+          console.log(`/game/${style}/${playerCount}`);
+          navigate(`/game/${style}/${playerCount}`);
         }}
       >
         <label htmlFor="gameParams">
@@ -40,7 +30,7 @@ const Rojo = () => {
         </label>
         <label htmlFor="gameParams">
           PlayerBoard Theme?
-          <select id="colorPalette" name="colorPallet">
+          <select id="style" name="style">
             <option />
             <option key="synthwave" value="synthwave">
               Synthwave

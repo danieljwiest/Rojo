@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { StrictMode } from "react";
 import Rojo from "./components/Rojo/Rojo";
+import GameBoard from "./components/GameBoard/GameBoard";
 
 //Default Query Client
 const queryClient = new QueryClient({
@@ -25,6 +26,7 @@ const App = () => {
           </header>
           <Routes>
             <Route path="/" element={<Rojo />} />
+            <Route path="/game/:style/:players" element={<GameBoard />} />
             {/* <Route path="/somePage/:id" element={<SomePageContainer />} /> */}
           </Routes>
           {/* <TestPage /> */}

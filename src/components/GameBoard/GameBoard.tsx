@@ -1,5 +1,4 @@
 import { CSSProperties, useReducer, useRef } from "react";
-import { GameParams as IGameParams } from "../../Types/AppTypes";
 import "./GameBoard.styles.css";
 import PlayerBoard from "../PlayerBoard/PlayerBoard";
 import useViewport from "../../Hooks/useViewport";
@@ -9,11 +8,14 @@ import TILEBAG from "../../utils/tileBag";
 import shuffle from "../../utils/shuffle";
 // import { RenderCount } from "../../utils/renderCount";
 import gameStateReducer from "../../Reducers/gameStateReducer";
+import { useParams } from "react-router-dom";
 
 const initTileBag = shuffle(TILEBAG);
 
-const GameBoard = ({ gameParams }: { gameParams: IGameParams }) => {
-  const playerCount = +gameParams.playerCount;
+const GameBoard = () => {
+  const { style, players } = useParams();
+  console.log(style, players);
+  const playerCount = !players ? 2 : +players;
   const playerBoards = [];
   const viewport = useViewport();
   const screenWidth = viewport.width;

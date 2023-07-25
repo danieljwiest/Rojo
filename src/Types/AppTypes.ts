@@ -1,8 +1,3 @@
-export interface GameParams {
-  colorPalette: string;
-  playerCount: string;
-}
-
 export interface TileState {
   id: string;
   visible: boolean;
