@@ -15,8 +15,8 @@
 
 .tileBase {
   position: absolute;
-  top: 4%;
-  left: 3%;
+  top: 10%;
+  left: 5%;
   transform-style: preserve-3d;
   height: calc((18 / 239) * var(--playerBoardWidth));
   aspect-ratio: 1 / 1;
