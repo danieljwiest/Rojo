@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useEffect, MutableRefObject } from "react";
-// import { isMobile } from "react-device-detect";
+import { isMobile } from "react-device-detect";
 import {
   GameState as IGameState,
   Action as IAction,
@@ -26,7 +26,6 @@ const Tile = ({
   numOfSelectedTiles?: MutableRefObject<number>;
   displayCode?: string;
 }) => {
-  const isMobile = true;
   const tileHover = isHovered ? "hover" : "";
   // const scoredTile = onWall ? "scoredTile" : ""; ////DELETE??? Dont think its used
   const selectedTileState = gameState
