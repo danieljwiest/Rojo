@@ -79,18 +79,44 @@
   --baseColor4: rgb(63, 62, 62);
   --baseColor5: rgb(103, 103, 103);
   */
+  height: 100%;
+  background-color: var(--background_main);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    "Helvetica", "Arial", sans-serif !important;
 }
 
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: black;
   color: white;
 }
 
-* {
-  box-sizing: border-box;
+.fullwidth {
+  width: 100%;
+}
+
+.is-flex {
+  display: flex;
+}
+
+.is-flex-direction-column {
+  flex-direction: column;
+}
+
+.is-justify-content-space-between {
+  justify-content: space-between;
 }
 
 .header {
@@ -108,10 +134,32 @@ a:active {
 }
 
 .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   background-image: url(/vermelho-long.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 15rem;
-  width: 100%;
+}
+.form {
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  margin-top: 3rem;
+}
+
+.formTitle {
+  font-size: 2rem;
+}
+
+.formItem {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  padding: 0.5rem;
 }

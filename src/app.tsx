@@ -17,7 +17,7 @@ const queryClient = new QueryClient({
 
 const App = () => {
   return (
-    <div className="app">
+    <div className="app fullwidth">
       {/* <StrictMode> */}
       <BrowserRouter>
         <QueryClientProvider client={queryClient}>

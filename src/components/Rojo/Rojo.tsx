@@ -5,21 +5,27 @@ const Rojo = () => {
   const navigate = useNavigate();
 
   return (
-    <div>
+    <div className="fullwidth is-flex is-flex-direction-column is-justify-content-center">
       <div className="hero"></div>
       <form
+        className="form"
         onSubmit={(e) => {
           e.preventDefault();
           const formData = new FormData(e.currentTarget);
           const style = formData.get("style")?.toString() ?? "";
           const playerCount = formData.get("playerCount")?.toString() ?? "";
-          console.log(formData);
-          console.log(`/game/${style}/${playerCount}`);
-          navigate(`/game/${style}/${playerCount}`);
+
+          if (style === "" || playerCount === "") {
+            alert("Please select game settings");
+          } else {
+            navigate(`/game/${style}/${playerCount}`);
+          }
         }}
       >
-        <label htmlFor="gameParams">
-          Number of Players?
+        <div className="formTitle">Game Settings</div>
+        <div className="formItem">
+          <label htmlFor="gameParams"> Number of Players?</label>
+
           <select id="playerCount" name="playerCount">
             <option />
             {PLAYER_COUNTS.map((playerCount) => (
@@ -28,16 +34,17 @@ const Rojo = () => {
               </option>
             ))}
           </select>
-        </label>
-        <label htmlFor="gameParams">
-          PlayerBoard Theme?
+        </div>
+
+        <div className="formItem">
+          <label htmlFor="gameParams"> Player Board Theme? </label>
           <select id="style" name="style">
             <option />
             <option key="synthwave" value="synthwave">
               Synthwave
             </option>
           </select>
-        </label>
+        </div>
         <button>Submit</button>
       </form>
     </div>

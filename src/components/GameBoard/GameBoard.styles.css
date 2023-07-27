@@ -11,7 +11,7 @@
     "    .      pBoard-1     .    "
     " pBoard-4 tileMarket pBoard-2"
     "    .      pBoard-3     .    ";
-  padding-top: calc((6 / 239) * var(--playerBoardWidth));
+  padding-top: calc((18 / 239) * var(--playerBoardWidth));
 }
 
 .twoPlayerGame {
